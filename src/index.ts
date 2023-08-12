@@ -82,7 +82,7 @@ export function issueCredential(credentialPayload: CredentialPayload): Result<Cr
 $update;
 export function deleteCredential(did: string): Result<boolean, string> {
 
-    if(!credentialStorage.containsKey('did')) return Result.Err<boolean, string>('a credential is not found');
+    if(!credentialStorage.containsKey(did)) return Result.Err<boolean, string>('a credential is not found');
 
     credentialStorage.remove(did);
 
