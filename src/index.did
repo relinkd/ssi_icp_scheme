@@ -1,0 +1,36 @@
+type Credential = record {
+  did : text;
+  title : text;
+  dateIssued : nat64;
+  validTime : nat64;
+  body : text;
+  "type" : text;
+  issuer : text;
+  identityHolder : text;
+  standard : text;
+};
+type CredentialPayload = record {
+  title : text;
+  validTime : nat64;
+  body : text;
+  "type" : text;
+  issuer : text;
+  identityHolder : text;
+  standard : text;
+};
+type _AzleResult = variant { Ok : bool; Err : text };
+type _AzleResult_1 = variant { Ok : vec Credential; Err : text };
+type _AzleResult_2 = variant { Ok : Credential; Err : text };
+type _AzleResult_3 = variant { Ok : nat64; Err : text };
+type _AzleResult_4 = variant { Ok : vec text; Err : text };
+type _AzleResult_5 = variant { Ok : text; Err : text };
+service : () -> {
+  checkCredentialDateValidity : (text) -> (_AzleResult) query;
+  deleteCredential : (text) -> (_AzleResult);
+  getAllCredentialDatabase : () -> (_AzleResult_1) query;
+  getCredential : (text) -> (_AzleResult_2) query;
+  getCurrentTime : () -> (_AzleResult_3) query;
+  getIssuersDB : () -> (_AzleResult_4) query;
+  issueCredential : (CredentialPayload) -> (_AzleResult_2);
+  registerIssuerAddress : (text) -> (_AzleResult_5);
+}

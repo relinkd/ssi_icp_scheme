@@ -1,5 +1,5 @@
 {
-  "name": "dfinity_project",
+  "name": "ssi_scheme",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -9,6 +9,7 @@
   "dependencies": {
     "@dfinity/agent": "^0.15.6",
     "@dfinity/candid": "^0.15.6",
+    "@swc/core": "^1.3.76",
     "azle": "0.16.2",
     "uuid": "^9.0.0"
   },
