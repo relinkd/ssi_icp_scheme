@@ -19,18 +19,18 @@ type CredentialPayload = record {
   standard : text;
 };
 type _AzleResult = variant { Ok : bool; Err : text };
-type _AzleResult_1 = variant { Ok : vec Credential; Err : text };
-type _AzleResult_2 = variant { Ok : Credential; Err : text };
-type _AzleResult_3 = variant { Ok : nat64; Err : text };
-type _AzleResult_4 = variant { Ok : vec text; Err : text };
-type _AzleResult_5 = variant { Ok : text; Err : text };
+type _AzleResult_1 = variant { Ok : text; Err : text };
+type _AzleResult_2 = variant { Ok : vec Credential; Err : text };
+type _AzleResult_3 = variant { Ok : Credential; Err : text };
+type _AzleResult_4 = variant { Ok : nat64; Err : text };
+type _AzleResult_5 = variant { Ok : vec text; Err : text };
 service : () -> {
   checkCredentialDateValidity : (text) -> (_AzleResult) query;
-  deleteCredential : (text) -> (_AzleResult);
-  getAllCredentialDatabase : () -> (_AzleResult_1) query;
-  getCredential : (text) -> (_AzleResult_2) query;
-  getCurrentTime : () -> (_AzleResult_3) query;
-  getIssuersDB : () -> (_AzleResult_4) query;
-  issueCredential : (CredentialPayload) -> (_AzleResult_2);
-  registerIssuerAddress : (text) -> (_AzleResult_5);
+  deleteCredential : (text) -> (_AzleResult_1);
+  getAllCredentialDatabase : () -> (_AzleResult_2) query;
+  getCredential : (text) -> (_AzleResult_3) query;
+  getCurrentTime : () -> (_AzleResult_4) query;
+  getIssuerDatabaseKeys : () -> (_AzleResult_5) query;
+  issueCredential : (CredentialPayload) -> (_AzleResult_3);
+  registerIssuerAddress : (text) -> (_AzleResult_1);
 }
